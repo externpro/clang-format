@@ -17,9 +17,9 @@ elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "^(aarch64|arm64|ARM64)$")
 endif()
 FetchContent_MakeAvailable(llvm)
 xpExternPackage(EXE_PATH ${CMAKE_INSTALL_BINDIR}/clang-format
-  BASE v0 XPDIFF "fetch"
+  COMPONENT xpro BASE v0 XPDIFF "fetch"
   WEB "https://clang.llvm.org/docs/ClangFormat.html" UPSTREAM "github.com/llvm/llvm-project"
   DESC "used to format C/C++/Java/JavaScript/JSON/Objective-C/Protobuf/C# code (clang/tools/clang-format in upstream repo)"
   LICENSE "[Apache-2.0](https://releases.llvm.org/11.0.0/LICENSE.TXT 'Apache License v2.0 with LLVM Exceptions, see https://clang.llvm.org/features.html#license and https://llvm.org/docs/DeveloperPolicy.html#copyright-license-and-patents')"
   )
-install(TARGETS clang-format RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR})
+install(TARGETS clang-format RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR} COMPONENT xpro)
