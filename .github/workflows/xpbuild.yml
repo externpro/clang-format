@@ -14,17 +14,18 @@ jobs:
       contents: read
       pull-requests: write
       packages: write
-    uses: externpro/externpro/.github/workflows/build-linux.yml@25.07.6
+    uses: externpro/externpro/.github/workflows/build-linux.yml@26.01
+    secrets:
+      automation_token: ${{ secrets.GHCR_TOKEN }}
     with:
-      cmake-workflow-preset: LinuxReleaseTargets
-    secrets: inherit
+      cmake_workflow_preset_suffix: ReleaseTargets
   macos:
-    uses: externpro/externpro/.github/workflows/build-macos.yml@25.07.6
-    with:
-      cmake-workflow-preset: DarwinReleaseTargets
+    uses: externpro/externpro/.github/workflows/build-macos.yml@26.01
     secrets: inherit
+    with:
+      cmake_workflow_preset_suffix: ReleaseTargets
   windows:
-    uses: externpro/externpro/.github/workflows/build-windows.yml@25.07.6
-    with:
-      cmake-workflow-preset: WindowsReleaseTargets
+    uses: externpro/externpro/.github/workflows/build-windows.yml@26.01
     secrets: inherit
+    with:
+      cmake_workflow_preset_suffix: ReleaseTargets
