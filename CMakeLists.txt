@@ -1,6 +1,5 @@
-cmake_minimum_required(VERSION 3.31)
+cmake_minimum_required(VERSION 4.3)
 set(CMAKE_BUILD_TYPE "Release" CACHE STRING "Build configuration")
-set(CMAKE_PROJECT_TOP_LEVEL_INCLUDES .devcontainer/cmake/xproinc.cmake)
 project(clang-format VERSION 19.1.5 LANGUAGES CXX)
 # https://github.com/llvm/llvm-project/releases/tag/llvmorg-19.1.5
 set(REPO https://github.com/llvm/llvm-project)
